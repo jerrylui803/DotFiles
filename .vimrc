@@ -1,3 +1,4 @@
+syntax on
 filetype plugin indent on
 " show existing tab with 4 spaces width
 set tabstop=4
@@ -31,5 +32,9 @@ au BufRead,BufNewFile *.go set filetype=go
 " " highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 " " highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
 
-" " For using tab in .py files (instead of tab mapping to 4 spaces)
+" " In .py files, use tab (instead of mapping tab to 4 spaces)
 " "au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab smarttab autoindent
+
+" " In .hs files, map tab to 2 spaces (instead of 4), and highlight the 80
+" " character line
+au BufNewFile,BufRead *.hs set tabstop=2 colorcolumn=80
